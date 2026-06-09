@@ -1,0 +1,721 @@
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>David Mayo Azorín | Senior IT Consultant</title>
+
+    <!-- Tailwind CSS (CDN for development only) -->
+    <script>
+        // Suppress Tailwind CDN warning
+        if (typeof console !== 'undefined' && console.warn) {
+            const originalWarn = console.warn;
+            console.warn = function (...args) {
+                if (args[0] && typeof args[0] === 'string' && args[0].includes('tailwindcss.com')) {
+                    return; // Suppress Tailwind CDN warning
+                }
+                originalWarn.apply(console, args);
+            };
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="body-main" data-theme="dark" data-lang="es" data-dir="ltr">
+
+    <!-- Loading Screen -->
+    <div class="loader-screen" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="loader-initials">DMA</span>
+                <span class="loader-dot"></span>
+            </div>
+            <div class="loader-terminal">
+                <div class="terminal-line" data-line="1"><span class="term-prompt">$</span> <span
+                        class="term-cmd">init</span> portfolio.config</div>
+                <div class="terminal-line" data-line="2"><span class="term-prompt">$</span> <span
+                        class="term-cmd">load</span> --modules <span class="term-arg">Python, Oracle, HL7</span></div>
+                <div class="terminal-line" data-line="3"><span class="term-prompt">$</span> <span
+                        class="term-cmd">connect</span> --env <span class="term-arg">production</span></div>
+                <div class="terminal-line" data-line="4"><span class="term-status">✓</span> <span
+                        class="term-ok">Ready</span></div>
+            </div>
+            <div class="loader-status" id="loaderStatus">Initializing...</div>
+            <div class="loader-progress-wrapper">
+                <div class="loader-progress-bar"></div>
+            </div>
+            <div class="loader-percentage" id="loaderPercent">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="main-header" id="header">
+        <nav class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">DMA.DEV</span>
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span class="nav-text" data-text-es="Inicio" data-text-en="Home">Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-text" data-text-es="Sobre mí" data-text-en="About">About</span>
+                </a>
+                <a href="#experience" class="nav-link" data-section="experience">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="nav-text" data-text-es="Experiencia" data-text-en="Experience">Experience</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i class="fas fa-code"></i>
+                    <span class="nav-text" data-text-es="Habilidades" data-text-en="Skills">Skills</span>
+                </a>
+                <a href="#education" class="nav-link" data-section="education">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span class="nav-text" data-text-es="Formación" data-text-en="Education">Education</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-text" data-text-es="Contacto" data-text-en="Contact">Contact</span>
+                </a>
+            </div>
+
+            <div class="nav-controls">
+                <button class="lang-toggle" id="langToggle" title="Toggle Language">
+                    <i class="fas fa-language"></i>
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="menu-toggle" id="menuToggle" title="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="code-grid-bg"></div>
+                <div class="floating-particles" id="particles"></div>
+            </div>
+
+            <div class="hero-container">
+                <div class="hero-content">
+
+                    <h1 class="hero-name" id="heroName">
+                        <span class="name-prefix">David</span>
+                        <span class="name-operator">Mayo</span>
+                        <span class="name-value">Azorín</span>
+                    </h1>
+
+                    <div class="hero-title">
+                        <span class="title-prefix">//</span>
+                        <span class="title-text" data-text-es="Senior IT Consultant"
+                            data-text-en="Senior IT Consultant">Senior IT Consultant</span>
+                    </div>
+
+                    <p class="hero-description"
+                        data-text-es="Consultor IT Senior con +5 años liderando proyectos de Salud Digital y gestión de entornos críticos en Sanidad Pública."
+                        data-text-en="Senior IT Consultant with 5+ years leading Digital Health projects and managing critical environments in Public Healthcare.">
+                        Consultor IT Senior con +5 años liderando proyectos de Salud Digital y gestión de entornos
+                        críticos en Sanidad Pública.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <span data-text-es="Contactar" data-text-en="Get In Touch">Get In Touch</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-social">
+                        <a href="mailto:david.mayo.95@gmail.com" class="social-icon" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/david-mayo-azorín/" target="_blank"
+                            rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/davimayazo" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <div class="profile-image-glow"></div>
+                        <div class="profile-image-frame">
+                            <div class="profile-image" id="profileImage">
+                                <div class="profile-placeholder">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-1">
+                            <i class="fab fa-python"></i>
+                            <div class="badge-content">
+                                <span class="badge-title">Python</span>
+                                <span class="badge-libs">FastAPI, Django</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <i class="fas fa-database"></i>
+                            <div class="badge-content">
+                                <span class="badge-title" data-text-es="Bases de Datos" data-text-en="Databases">Bases
+                                    de Datos</span>
+                                <span class="badge-libs">Oracle, PostgreSQL, MySQL</span>
+                            </div>
+                        </div>
+                        <div class="floating-badge badge-3">
+                            <i class="fas fa-server"></i>
+                            <div class="badge-content">
+                                <span class="badge-title" data-text-es="Sistemas y Salud"
+                                    data-text-en="Systems & Health">Sistemas y Salud</span>
+                                <span class="badge-libs" data-text-es="Linux/Windows, HL7, Redes"
+                                    data-text-en="Linux/Windows, HL7, Networks">Linux/Windows, HL7, Redes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span class="scroll-text" data-text-es="Desliza hacia abajo" data-text-en="Scroll Down">Scroll
+                    Down</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">&lt;</span>
+                        <span class="title-text" data-text-es="Sobre mí" data-text-en="About Me">About Me</span>
+                        <span class="title-bracket">/&gt;</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text-wrapper">
+                        <div class="about-intro">
+                            <p class="about-text"
+                                data-text-es="Ingeniero Informático y Consultor Senior especializado en Salud Digital. Más de 5 años de experiencia en Minsait (Indra) liderando el soporte técnico y la evolución del Sistema de Información de Laboratorio para la Sanidad Pública. Experto en interoperabilidad sanitaria, gestión de entornos críticos de bases de datos y administración de servidores en entornos hospitalarios de alta disponibilidad."
+                                data-text-en="Computer Engineer and Senior Consultant specialized in Digital Health. Over 5 years of experience at Minsait (Indra) leading technical support and the evolution of the Laboratory Information System for Public Health. Expert in healthcare interoperability, management of critical database environments, and server administration in high-availability hospital environments.">
+                                Ingeniero Informático y Consultor Senior especializado en Salud Digital. Más de 5 años
+                                de experiencia en Minsait (Indra) liderando el soporte técnico y la evolución del
+                                Sistema de Información de Laboratorio para la Sanidad Pública. Experto en
+                                interoperabilidad sanitaria, gestión de entornos críticos de bases de datos y
+                                administración de servidores en entornos hospitalarios de alta disponibilidad.
+                            </p>
+                        </div>
+
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="5" data-suffix="+">0</div>
+                                <div class="stat-label" data-text-es="Años de Experiencia"
+                                    data-text-en="Years Experience">Years Experience</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="10" data-suffix="+">0</div>
+                                <div class="stat-label" data-text-es="Tecnologías" data-text-en="Technologies">
+                                    Technologies</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-image-wrapper">
+                        <div class="about-image-container">
+                            <div class="code-block">
+                                <div class="code-line">
+                                    <span class="code-keyword">const</span>
+                                    <span class="code-variable">consultor</span>
+                                    <span class="code-operator">=</span>
+                                    <span class="code-brace">{</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-property">nombre</span>
+                                    <span class="code-operator">:</span>
+                                    <span class="code-string">'David Mayo'</span>
+                                    <span class="code-comma">,</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-property">rol</span>
+                                    <span class="code-operator">:</span>
+                                    <span class="code-string">'Senior IT Consultant'</span>
+                                    <span class="code-comma">,</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-property">especialidad</span>
+                                    <span class="code-operator">:</span>
+                                    <span class="code-string">'Salud Digital'</span>
+                                    <span class="code-comma">,</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-property">stack</span>
+                                    <span class="code-operator">:</span>
+                                    <span class="code-bracket">[</span>
+                                    <span class="code-string">'Python'</span>
+                                    <span class="code-comma">,</span>
+                                    <span class="code-string">'Oracle'</span>
+                                    <span class="code-comma">,</span>
+                                    <span class="code-string">'HL7'</span>
+                                    <span class="code-comma">,</span>
+                                    <span class="code-string">'Linux'</span>
+                                    <span class="code-bracket">]</span>
+                                    <span class="code-comma">,</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="code-property">pasión</span>
+                                    <span class="code-operator">:</span>
+                                    <span class="code-string">'Innovar en Sanidad'</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="code-brace">}</span>
+                                    <span class="code-semicolon">;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">&lt;</span>
+                        <span class="title-text" data-text-es="Experiencia" data-text-en="Experience">Experience</span>
+                        <span class="title-bracket">/&gt;</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-year" data-text-es="Junio 2021 - Presente"
+                                    data-text-en="June 2021 - Present">June 2021 - Present</div>
+                                <div class="timeline-badge" data-text-es="Actual" data-text-en="Current">Current</div>
+                            </div>
+                            <h3 class="timeline-title" data-text-es="Senior IT Consultant"
+                                data-text-en="Senior IT Consultant">Senior IT Consultant</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i>
+                                Indra (Minsait)
+                            </div>
+                            <p class="timeline-description"
+                                data-text-es="Liderazgo técnico en la gestión y evolución del ecosistema de los laboratorios clínicos de la Red Sanitaria Valenciana, asegurando la continuidad operativa de servicios críticos."
+                                data-text-en="Technical leadership in the management and evolution of the clinical laboratory ecosystem of the Valencian Health Network, ensuring the operational continuity of critical services.">
+                                Liderazgo técnico en la gestión y evolución del ecosistema de los laboratorios clínicos
+                                de la Red Sanitaria Valenciana, asegurando la continuidad operativa de servicios
+                                críticos.
+                            </p>
+                            <div class="timeline-achievements">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Liderazgo de un equipo técnico encargado de asegurar la continuidad operativa de servicios críticos en la red de hospitales y centros de salud de la Comunidad Valenciana."
+                                        data-text-en="Leadership of a technical team in charge of ensuring the operational continuity of critical services in the network of hospitals and health centers of the Valencian Community.">Liderazgo
+                                        de un equipo técnico encargado
+                                        de asegurar la continuidad operativa de servicios críticos en la red de
+                                        hospitales y centros de salud de la Comunidad Valenciana.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Liderazgo técnico en la implantación del SIL en nuevos centros hospitalarios, coordinando la configuración del software y la formación técnica inicial."
+                                        data-text-en="Technical leadership in the implementation of the LIS in new hospitals, coordinating software configuration and initial technical training.">Liderazgo
+                                        técnico en la implantación
+                                        del SIL en nuevos centros hospitalarios, coordinando la configuración del
+                                        software y la formación técnica inicial.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Ejecución de migraciones críticas de bases de datos y sistemas, garantizando la integridad de la información clínica y minimizando los tiempos de inactividad del servicio."
+                                        data-text-en="Execution of critical database and system migrations, ensuring the integrity of clinical information and minimizing service downtime.">Ejecución
+                                        de migraciones críticas de
+                                        bases de datos y sistemas, garantizando la integridad de la información clínica
+                                        y minimizando los tiempos de inactividad del servicio.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Responsable del soporte nivel 3 y mantenimiento evolutivo del Sistema de Información de Laboratorio."
+                                        data-text-en="Responsible for level 3 support and evolutionary maintenance of the Laboratory Information System.">Responsable
+                                        del soporte nivel 3 y
+                                        mantenimiento evolutivo del Sistema de Información de Laboratorio.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Gestión de integraciones y mensajería sanitaria utilizando el estándar HL7, garantizando la correcta comunicación entre el SIL y otros sistemas hospitalarios."
+                                        data-text-en="Management of healthcare integrations and messaging using the HL7 standard, ensuring proper communication between the LIS and other hospital systems.">Gestión
+                                        de integraciones y
+                                        mensajería sanitaria utilizando el estándar HL7, garantizando la correcta
+                                        comunicación entre el SIL y otros sistemas hospitalarios.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Administración avanzada de BBDD Oracle y Firebird, realizando tareas de tunning y optimización para mejorar los tiempos de respuesta en la carga de resultados analíticos."
+                                        data-text-en="Advanced administration of Oracle and Firebird databases, performing tuning and optimization tasks to improve response times when loading analytical results.">Administración
+                                        avanzada de BBDD
+                                        Oracle y Firebird, realizando tareas de tunning y optimización para mejorar los
+                                        tiempos de respuesta en la carga de resultados analíticos.</span>
+                                </div>
+                            </div>
+                            <div class="timeline-tags">
+                                <span class="tag">Oracle</span>
+                                <span class="tag">Firebird</span>
+                                <span class="tag">HL7</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Windows Server</span>
+                                <span class="tag">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-year" data-text-es="Noviembre 2019 - Febrero 2020"
+                                    data-text-en="November 2019 - February 2020">November 2019 - February 2020</div>
+                            </div>
+                            <h3 class="timeline-title" data-text-es="Quality Assurance Engineer"
+                                data-text-en="Quality Assurance Engineer">
+                                Quality Assurance Engineer</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i>
+                                Mirada PLC (Prácticas)
+                            </div>
+                            <p class="timeline-description" data-text-es="Desarrollo full-stack"
+                                data-text-en="Full-stack development">
+                                Desarrollo full-stack
+                            </p>
+                            <div class="timeline-achievements">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Desarrollo de una aplicación web para la orquestación y ejecución automatizada de suites de test mediante la integración con Jenkins API."
+                                        data-text-en="Development of a web application for the orchestration and automated execution of test suites through integration with the Jenkins API.">Desarrollo
+                                        de una aplicación web para la
+                                        orquestación y ejecución automatizada de suites de test mediante la integración
+                                        con Jenkins API.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span
+                                        data-text-es="Implementación de una interfaz para monitorización de tests en tiempo real, facilitando la identificación temprana de defectos y la mejora de la calidad del código."
+                                        data-text-en="Implementation of an interface for real-time test monitoring, facilitating the early identification of defects and the improvement of code quality.">Implementación
+                                        de una interfaz para
+                                        monitorización de tests en tiempo real, facilitando la identificación temprana
+                                        de defectos y la mejora de la calidad del código.</span>
+                                </div>
+                            </div>
+                            <div class="timeline-tags">
+                                <span class="tag">Jenkins</span>
+                                <span class="tag">Groovy</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">&lt;</span>
+                        <span class="title-text" data-text-es="Habilidades" data-text-en="Skills">Skills</span>
+                        <span class="title-bracket">/&gt;</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="category-title" data-text-es="Backend y Desarrollo"
+                            data-text-en="Backend & Development">Backend & Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-python"></i> Python (FastAPI, Django)</span>
+                            <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> Javascript (React)</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C++</span>
+                            <span class="skill-tag"><i class="fas fa-code"></i> C#</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title" data-text-es="Bases de Datos" data-text-en="Databases">Databases
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-database"></i> Oracle</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> Firebird</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title" data-text-es="Sistemas" data-text-en="Systems">Systems</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-windows"></i> Admin. Servidores Windows</span>
+                            <span class="skill-tag"><i class="fab fa-linux"></i> Admin. Servidores Linux</span>
+                            <span class="skill-tag"><i class="fas fa-network-wired"></i> Redes</span>
+                            <span class="skill-tag"><i class="fas fa-heartbeat"></i> HL7</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title" data-text-es="Herramientas" data-text-en="Tools">Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
+                            <span class="skill-tag"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="skill-tag"><i class="fab fa-jira"></i> Jira</span>
+                            <span class="skill-tag"><i class="fab fa-jenkins"></i> Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section experience-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">&lt;</span>
+                        <span class="title-text" data-text-es="Formación" data-text-en="Education">Education</span>
+                        <span class="title-bracket">/&gt;</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
+                                <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
+                                    Certificate</div>
+                            </div>
+                            <h3 class="timeline-title" data-text-es="Foundational C# with Microsoft"
+                                data-text-en="Foundational C# with Microsoft">Foundational C# with Microsoft</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-award"></i>
+                                freeCodeCamp & Microsoft
+                            </div>
+                            <p class="timeline-description"
+                                data-text-es="Certificación fundamental en C# enfocada en el desarrollo de aplicaciones y lógica de programación."
+                                data-text-en="Foundational C# certification focused on application development and programming logic.">
+                                Certificación fundamental en C# enfocada en el desarrollo de aplicaciones y lógica de
+                                programación.
+                            </p>
+                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/foundational-c-sharp-with-microsoft"
+                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
+                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
+                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
+                                    Certificate</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-year" data-text-es="2013 - 2020" data-text-en="2013 - 2020">2013 -
+                                    2020</div>
+                                <div class="timeline-badge" data-text-es="Grado" data-text-en="Degree">Degree</div>
+                            </div>
+                            <h3 class="timeline-title" data-text-es="Grado en Ingeniería Informática"
+                                data-text-en="Bachelor's Degree in Computer Engineering">Bachelor's Degree in Computer
+                                Engineering</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-university"></i>
+                                Universidad Jaime I
+                            </div>
+                            <p class="timeline-description"
+                                data-text-es="Especializado en tecnologías de la información."
+                                data-text-en="Specialized in information technologies.">
+                                Especializado en tecnologías de la información.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">
+                        <span class="title-bracket">&lt;</span>
+                        <span class="title-text" data-text-es="Contacto" data-text-en="Contact">Contact</span>
+                        <span class="title-bracket">/&gt;</span>
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-label" data-text-es="Email" data-text-en="Email">Email
+                                </h4>
+                                <a href="mailto:david.mayo.95@gmail.com"
+                                    class="contact-value">david.mayo.95@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-label" data-text-es="LinkedIn" data-text-en="LinkedIn">LinkedIn
+                                </h4>
+                                <a href="https://www.linkedin.com/in/david-mayo-azorín/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="contact-value">https://www.linkedin.com/in/david-mayo-azorín/</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4 class="contact-label" data-text-es="Ubicación" data-text-en="Location">Location</h4>
+                                <span class="contact-value" data-text-es="La Vall d'Uixó, Castellón"
+                                    data-text-en="La Vall d'Uixó, Castellón">La Vall d'Uixó, Castellón</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <input type="hidden" name="access_key" value="993ab6ca-9b90-43fc-a54d-4c34fb213881">
+                        <input type="hidden" name="subject" value="Nuevo mensaje desde tu Portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Web">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-input" placeholder="Name"
+                                data-placeholder-es="Nombre" data-placeholder-en="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-input" placeholder="Email"
+                                data-placeholder-es="Email" data-placeholder-en="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject_line" class="form-input" placeholder="Subject"
+                                data-placeholder-es="Asunto" data-placeholder-en="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" class="form-input form-textarea" rows="5" placeholder="Message"
+                                data-placeholder-es="Mensaje" data-placeholder-en="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span data-text-es="Enviar Mensaje" data-text-en="Send Message">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-text-wrapper">
+                    <p class="footer-text">
+                        <span class="footer-copyright">© 2026 David Mayo Azorín</span>
+                        <span class="footer-divider">•</span>
+                        <span class="footer-built">Desarrollado con ❤</span>
+                    </p>
+                    <p class="footer-author">
+                        <span class="footer-by-text" data-text-es="by" data-text-en="by">by</span>
+                        <a href="https://www.linkedin.com/in/david-mayo-azorín/" target="_blank"
+                            rel="noopener noreferrer" class="footer-author-link">
+                            <i class="fas fa-code"></i>
+                            <span>David Mayo Azorín</span>
+                        </a>
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/david-mayo-azorín/" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/davimayazo" target="_blank" rel="noopener noreferrer"
+                        class="footer-social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
