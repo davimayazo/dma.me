@@ -20,6 +20,7 @@ function initializeApp() {
     initMobileMenu();
     updateLanguageUI();
     updateThemeUI();
+    initEasterEgg();
     AppState.isLoaded = true;
 }
 
@@ -157,7 +158,7 @@ function initNavigation() {
 function handleScroll() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPosition = window.scrollY + 100;
-    
+
     // Check if we're at the bottom of the page
     const isAtBottom = (window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 50;
 
@@ -242,11 +243,11 @@ function handleFormSubmit(e) {
     const submitBtn = form.querySelector('.btn-submit');
     const submitText = submitBtn.querySelector('span');
     const submitIcon = submitBtn.querySelector('i');
-    
+
     // Save original state
     const originalText = submitText.textContent;
     const originalIcon = submitIcon.className;
-    
+
     // Show loading state
     submitBtn.disabled = true;
     submitText.textContent = AppState.currentLang === 'es' ? 'Enviando...' : 'Sending...';
@@ -260,32 +261,32 @@ function handleFormSubmit(e) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(jsonData)
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            submitText.textContent = AppState.currentLang === 'es' ? '¡Mensaje Enviado!' : 'Message Sent!';
-            submitIcon.className = 'fas fa-check';
-            submitBtn.style.background = 'var(--green)';
-            form.reset();
-        } else {
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                submitText.textContent = AppState.currentLang === 'es' ? '¡Mensaje Enviado!' : 'Message Sent!';
+                submitIcon.className = 'fas fa-check';
+                submitBtn.style.background = 'var(--green)';
+                form.reset();
+            } else {
+                submitText.textContent = AppState.currentLang === 'es' ? 'Error al enviar' : 'Send Failed';
+                submitIcon.className = 'fas fa-exclamation-triangle';
+                submitBtn.style.background = 'var(--red, #ff4444)';
+            }
+        })
+        .catch(() => {
             submitText.textContent = AppState.currentLang === 'es' ? 'Error al enviar' : 'Send Failed';
             submitIcon.className = 'fas fa-exclamation-triangle';
             submitBtn.style.background = 'var(--red, #ff4444)';
-        }
-    })
-    .catch(() => {
-        submitText.textContent = AppState.currentLang === 'es' ? 'Error al enviar' : 'Send Failed';
-        submitIcon.className = 'fas fa-exclamation-triangle';
-        submitBtn.style.background = 'var(--red, #ff4444)';
-    })
-    .finally(() => {
-        setTimeout(() => {
-            submitBtn.disabled = false;
-            submitText.textContent = originalText;
-            submitIcon.className = originalIcon;
-            submitBtn.style.background = '';
-        }, 3000);
-    });
+        })
+        .finally(() => {
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitText.textContent = originalText;
+                submitIcon.className = originalIcon;
+                submitBtn.style.background = '';
+            }, 3000);
+        });
 }
 
 function initMobileMenu() {
@@ -403,7 +404,7 @@ function initLoaderAnimation() {
 
     let progress = 0;
     let msgIndex = 0;
-    
+
     const statusInterval = setInterval(() => {
         if (msgIndex < statusMessages.length && loaderStatus) {
             loaderStatus.textContent = statusMessages[msgIndex];
@@ -594,7 +595,7 @@ function initSkillAnimations() {
             if (entry.isIntersecting) {
                 const category = entry.target;
                 const tags = category.querySelectorAll('.skill-tag');
-                
+
                 if (tags.length > 0 && typeof anime !== 'undefined') {
                     anime({
                         targets: tags,
@@ -799,8 +800,118 @@ function initSmoothScroll() {
             }
         });
     });
+}
 
-    // Scroll listener removed from here to prevent conflicts with handleScroll()
+function initEasterEgg() {
+    let inputSequence = '';
+    document.addEventListener('keydown', (e) => {
+        if (e.key.length === 1) {
+            inputSequence += e.key.toLowerCase();
+        }
+
+        if (inputSequence.length > 10) {
+            inputSequence = inputSequence.slice(-10);
+        }
+
+        if (inputSequence.endsWith('33')) {
+            triggerEasterEgg('alonso');
+            inputSequence = '';
+        } else if (inputSequence.endsWith('ñ')) {
+            triggerEasterEgg('nadal');
+            inputSequence = '';
+        } else if (inputSequence.endsWith('10')) {
+            triggerEasterEgg('messi');
+            inputSequence = '';
+        }
+    });
+}
+
+function triggerEasterEgg(type) {
+    let eggId = type + '-easter-egg';
+    let container = document.getElementById(eggId);
+
+    if (!container) {
+        container = document.createElement('div');
+        container.id = eggId;
+        container.className = 'easter-egg-container';
+
+        let text = document.createElement('div');
+        text.className = 'easter-egg-text';
+
+        let img = document.createElement('img');
+        img.className = 'easter-egg-img';
+
+        if (type === 'alonso') {
+            text.textContent = 'LA 33 ES INEVITABLE';
+            img.src = 'fernando-alonso.png';
+        } else if (type === 'nadal') {
+            text.textContent = 'El mejor deportista español de todos los tiempos';
+            img.src = 'rafa-nadal.png';
+        } else if (type === 'messi') {
+            text.textContent = 'GOAT';
+            img.src = 'leo-messi.png';
+        }
+
+        container.appendChild(text);
+        container.appendChild(img);
+        document.body.appendChild(container);
+    }
+
+    animateEasterEgg(container);
+}
+
+function animateEasterEgg(container) {
+    if (container.classList.contains('is-animating')) return;
+    container.classList.add('is-animating');
+
+    let textNode = container.querySelector('.easter-egg-text');
+
+    if (typeof anime !== 'undefined') {
+        let tl = anime.timeline();
+        tl.add({
+            targets: container,
+            translateY: ['100%', '0%'],
+            duration: 1000,
+            easing: 'easeOutElastic(1, .6)'
+        });
+        
+        if (textNode) {
+            tl.add({
+                targets: textNode,
+                opacity: [0, 1],
+                scale: [0.5, 1],
+                duration: 500,
+                easing: 'easeOutBack'
+            }, '-=600');
+        }
+
+        tl.add({
+            targets: container,
+            translateY: ['0%', '100%'],
+            duration: 800,
+            delay: 1500,
+            easing: 'easeInBack',
+            complete: function () {
+                container.classList.remove('is-animating');
+                if (textNode) {
+                    textNode.style.opacity = '0';
+                    textNode.style.transform = 'scale(0.5)';
+                }
+            }
+        });
+    } else {
+        container.style.transform = 'translateY(0%)';
+        container.style.transition = 'transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        if (textNode) textNode.style.opacity = '1';
+
+        setTimeout(() => {
+            container.style.transform = 'translateY(100%)';
+            if (textNode) textNode.style.opacity = '0';
+            setTimeout(() => {
+                container.classList.remove('is-animating');
+            }, 1000);
+        }, 3000);
+    }
 }
 
 window.Animations = {

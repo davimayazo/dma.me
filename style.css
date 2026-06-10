@@ -2085,3 +2085,42 @@ img {
         font-size: 1.5rem;
     }
 }
+
+/* Easter Egg Styles */
+.easter-egg-container {
+    position: fixed;
+    bottom: 0;
+    right: 5%;
+    width: 350px;
+    max-width: 40vw;
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(100%);
+}
+
+.easter-egg-img {
+    width: 100%;
+    filter: drop-shadow(0 0 30px rgba(192,132,252,0.4));
+}
+
+.easter-egg-text {
+    font-family: var(--font-code);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(192,132,252,0.8), 0 0 20px rgba(0,0,0,0.8);
+    background: rgba(10, 14, 39, 0.8);
+    border: 1px solid var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    white-space: normal;
+    max-width: 90vw;
+    line-height: 1.3;
+    opacity: 0;
+    transform: scale(0.5);
+}
