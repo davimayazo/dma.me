@@ -918,3 +918,20 @@ window.Animations = {
     initParallax,
     initSmoothScroll
 };
+
+// Full-Stack Accordion Toggle
+function toggleFullstackCerts() {
+    const accordion = document.getElementById('fullstackAccordion');
+    if (!accordion) return;
+    accordion.classList.toggle('expanded');
+    
+    const hint = accordion.querySelector('.fullstack-expand-hint span');
+    if (hint) {
+        const isExpanded = accordion.classList.contains('expanded');
+        if (AppState.currentLang === 'es') {
+            hint.textContent = isExpanded ? 'Ocultar certificaciones' : 'Ver certificaciones incluidas';
+        } else {
+            hint.textContent = isExpanded ? 'Hide certifications' : 'View included certifications';
+        }
+    }
+}

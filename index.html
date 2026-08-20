@@ -553,147 +553,91 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
-                        <div class="timeline-content">
+                        <div class="timeline-content fullstack-accordion" id="fullstackAccordion" onclick="toggleFullstackCerts()">
                             <div class="timeline-header">
                                 <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
                                 <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
                                     Certificate</div>
                             </div>
-                            <h3 class="timeline-title" data-text-es="Responsive Web Design"
-                                data-text-en="Responsive Web Design">Responsive Web Design</h3>
+                            <h3 class="timeline-title" data-text-es="Desarrollador Full-Stack"
+                                data-text-en="Full-Stack Developer">Desarrollador Full-Stack</h3>
                             <div class="timeline-company">
                                 <i class="fas fa-award"></i>
                                 freeCodeCamp
                             </div>
                             <p class="timeline-description"
-                                data-text-es="Certificación en diseño web responsivo abarcando HTML, CSS y diseño adaptable."
-                                data-text-en="Responsive web design certification covering HTML, CSS, and adaptive design.">
-                                Certificación en diseño web responsivo abarcando HTML, CSS y diseño adaptable.
+                                data-text-es="Certificación completa Full-Stack abarcando 6 módulos: diseño web responsivo, JavaScript, librerías Front End, Python, bases de datos relacionales y desarrollo Back End con APIs."
+                                data-text-en="Complete Full-Stack certification covering 6 modules: responsive web design, JavaScript, Front End libraries, Python, relational databases, and Back End development with APIs.">
+                                Certificación completa Full-Stack abarcando 6 módulos: diseño web responsivo, JavaScript, librerías Front End, Python, bases de datos relacionales y desarrollo Back End con APIs.
                             </p>
-                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/responsive-web-design-v9"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
-                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
-                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
-                                    Certificate</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
+                            <div class="fullstack-expand-hint">
+                                <i class="fas fa-chevron-down fullstack-chevron"></i>
+                                <span data-text-es="Ver certificaciones incluidas" data-text-en="View included certifications">Ver certificaciones incluidas</span>
+                            </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
-                                <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
-                                    Certificate</div>
-                            </div>
-                            <h3 class="timeline-title" data-text-es="JavaScript Algorithms and Data Structures"
-                                data-text-en="JavaScript Algorithms and Data Structures">JavaScript Algorithms and Data Structures</h3>
-                            <div class="timeline-company">
-                                <i class="fas fa-award"></i>
-                                freeCodeCamp
-                            </div>
-                            <p class="timeline-description"
-                                data-text-es="Certificación en algoritmos y estructuras de datos utilizando JavaScript."
-                                data-text-en="Certification in algorithms and data structures using JavaScript.">
-                                Certificación en algoritmos y estructuras de datos utilizando JavaScript.
-                            </p>
-                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/javascript-v9"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
-                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
-                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
-                                    Certificate</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
+                            <div class="fullstack-certs-list" id="fullstackCertsList">
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
-                                <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
-                                    Certificate</div>
-                            </div>
-                            <h3 class="timeline-title" data-text-es="Front End Development Libraries"
-                                data-text-en="Front End Development Libraries">Front End Development Libraries</h3>
-                            <div class="timeline-company">
-                                <i class="fas fa-award"></i>
-                                freeCodeCamp
-                            </div>
-                            <p class="timeline-description"
-                                data-text-es="Certificación en librerías de desarrollo Front End abarcando Bootstrap, jQuery, SASS, React y Redux."
-                                data-text-en="Front End Development Libraries certification covering Bootstrap, jQuery, SASS, React, and Redux.">
-                                Certificación en librerías de desarrollo Front End abarcando Bootstrap, jQuery, SASS, React y Redux.
-                            </p>
-                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/front-end-development-libraries-v9"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
-                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
-                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
-                                    Certificate</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/responsive-web-design-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fas fa-palette"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="Responsive Web Design" data-text-en="Responsive Web Design">Responsive Web Design</span>
+                                        <span class="fullstack-cert-desc" data-text-es="HTML, CSS y diseño adaptable" data-text-en="HTML, CSS, and adaptive design">HTML, CSS y diseño adaptable</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
-                                <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
-                                    Certificate</div>
-                            </div>
-                            <h3 class="timeline-title" data-text-es="Scientific Computing with Python"
-                                data-text-en="Scientific Computing with Python">Scientific Computing with Python</h3>
-                            <div class="timeline-company">
-                                <i class="fas fa-award"></i>
-                                freeCodeCamp
-                            </div>
-                            <p class="timeline-description"
-                                data-text-es="Certificación en computación científica con Python enfocada en estructuras de datos y resolución de problemas."
-                                data-text-en="Scientific computing with Python certification focused on data structures and problem-solving.">
-                                Certificación en computación científica con Python enfocada en estructuras de datos y
-                                resolución de problemas.
-                            </p>
-                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/python-v9"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
-                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
-                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
-                                    Certificate</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
-                        </div>
-                    </div>
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/javascript-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fab fa-js-square"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="JavaScript Algorithms and Data Structures" data-text-en="JavaScript Algorithms and Data Structures">JavaScript Algorithms and Data Structures</span>
+                                        <span class="fullstack-cert-desc" data-text-es="Algoritmos y estructuras de datos" data-text-en="Algorithms and data structures">Algoritmos y estructuras de datos</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-header">
-                                <div class="timeline-year" data-text-es="2026" data-text-en="2026">2026</div>
-                                <div class="timeline-badge" data-text-es="Certificado" data-text-en="Certificate">
-                                    Certificate</div>
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/front-end-development-libraries-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fab fa-react"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="Front End Development Libraries" data-text-en="Front End Development Libraries">Front End Development Libraries</span>
+                                        <span class="fullstack-cert-desc" data-text-es="Bootstrap, jQuery, SASS, React y Redux" data-text-en="Bootstrap, jQuery, SASS, React, and Redux">Bootstrap, jQuery, SASS, React y Redux</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
+
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/python-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fab fa-python"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="Scientific Computing with Python" data-text-en="Scientific Computing with Python">Scientific Computing with Python</span>
+                                        <span class="fullstack-cert-desc" data-text-es="Estructuras de datos y resolución de problemas" data-text-en="Data structures and problem-solving">Estructuras de datos y resolución de problemas</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
+
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/relational-databases-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fas fa-database"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="Relational Databases" data-text-en="Relational Databases">Relational Databases</span>
+                                        <span class="fullstack-cert-desc" data-text-es="PostgreSQL, Bash scripting y herramientas Unix" data-text-en="PostgreSQL, Bash scripting, and Unix tools">PostgreSQL, Bash scripting y herramientas Unix</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
+
+                                <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/back-end-development-and-apis-v9"
+                                    target="_blank" rel="noopener noreferrer" class="fullstack-cert-item" onclick="event.stopPropagation()">
+                                    <div class="fullstack-cert-icon"><i class="fas fa-server"></i></div>
+                                    <div class="fullstack-cert-info">
+                                        <span class="fullstack-cert-name" data-text-es="Back End Development and APIs" data-text-en="Back End Development and APIs">Back End Development and APIs</span>
+                                        <span class="fullstack-cert-desc" data-text-es="Node.js, Express, MongoDB y Mongoose" data-text-en="Node.js, Express, MongoDB, and Mongoose">Node.js, Express, MongoDB y Mongoose</span>
+                                    </div>
+                                    <i class="fas fa-external-link-alt fullstack-cert-link"></i>
+                                </a>
+
                             </div>
-                            <h3 class="timeline-title" data-text-es="Relational Databases"
-                                data-text-en="Relational Databases">Relational Databases</h3>
-                            <div class="timeline-company">
-                                <i class="fas fa-award"></i>
-                                freeCodeCamp
-                            </div>
-                            <p class="timeline-description"
-                                data-text-es="Certificación en bases de datos relacionales abarcando PostgreSQL, Bash scripting y herramientas Unix."
-                                data-text-en="Relational databases certification covering PostgreSQL, Bash scripting, and Unix tools.">
-                                Certificación en bases de datos relacionales abarcando PostgreSQL, Bash scripting y herramientas Unix.
-                            </p>
-                            <a href="https://www.freecodecamp.org/certification/fcc-fba33f1e-2531-45cb-8de8-20e3d4fb9627/relational-databases-v9"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-secondary"
-                                style="margin-top: 15px; padding: 5px 15px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 8px;">
-                                <span data-text-es="Ver Certificado" data-text-en="View Certificate">View
-                                    Certificate</span>
-                                <i class="fas fa-external-link-alt"></i>
-                            </a>
                         </div>
                     </div>
 
